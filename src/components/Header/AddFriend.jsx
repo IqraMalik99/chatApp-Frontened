@@ -60,7 +60,7 @@ export default function AddFriend() {
     // send friendRequest to backend
     try {
       console.log(friendRequest);
-      // await axios.post('http://localhost:3000/chat/sendFriendRequests', { requests: friendRequest }, { withCredentials: true });
+      // await axios.post('https://chat-app-backened-beta.vercel.app/chat/sendFriendRequests', { requests: friendRequest }, { withCredentials: true });
        // here send api to send list of user to send friend request
       socket.emit(Friend_Request,{
      sender:user,
