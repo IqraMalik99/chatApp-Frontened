@@ -12,7 +12,7 @@ let dispatch = useDispatch();
   useEffect(() => {
     let signout = async () => {
       try {
-          const response = await axios.post('http://localhost:3000/user/sign-out', {}, {
+          const response = await axios.post('https://chat-app-backened-beta.vercel.app/user/sign-out', {}, {
             withCredentials: true, // Include credentials (cookies) with the request
             headers: {
               'Content-Type': 'application/json'

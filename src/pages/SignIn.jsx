@@ -21,7 +21,7 @@ function SignIn() {
         try {
             // Send data to the backend using axios
 
-            const response = await axios.post('http://localhost:3000/user/sign-in', data, { withCredentials: true });
+            const response = await axios.post('https://chat-app-backened-beta.vercel.app/user/sign-in', data, { withCredentials: true });
             console.log('Response from server:', response.data);
             reset();
             let userInfo = {

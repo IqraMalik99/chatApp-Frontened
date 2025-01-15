@@ -31,7 +31,7 @@ function ChatArea() {
     formData.append('chatId',chatId)
     console.log("My form data is:",formData)
     try {
-      const response = await axios.post('http://localhost:3000/chat/createAttachment', formData, {
+      const response = await axios.post('https://chat-app-backened-beta.vercel.app/chat/createAttachment', formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
         },
@@ -78,8 +78,8 @@ function ChatArea() {
     const fetcher = async () => {
       try {
         if (chatId !== 1) {
-          const res = await axios.get(`http://localhost:3000/chat/getmsg/${chatId}`, { withCredentials: true });
-          const membersofChat = await axios.get(`http://localhost:3000/chat/getmemberfromchatId/${chatId}`, { withCredentials: true });
+          const res = await axios.get(`https://chat-app-backened-beta.vercel.app/chat/getmsg/${chatId}`, { withCredentials: true });
+          const membersofChat = await axios.get(`https://chat-app-backened-beta.vercel.app/chat/getmemberfromchatId/${chatId}`, { withCredentials: true });
           setMemberChat(membersofChat.data.message[0].members);
           setMessages(res.data.message);
           console.log(res.data.message);

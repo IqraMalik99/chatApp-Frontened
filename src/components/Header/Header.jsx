@@ -18,7 +18,7 @@ function Header() {
     const logged = useSelector((state) => state.user.login);
 // useEffect(()=>{
 //   let fetcher= async()=>{
-//     let res = await axios.post(`http://localhost:3000/user/getToken/${Userstate.id}`,{}, { withCredentials: true });
+//     let res = await axios.post(`https://chat-app-backened-beta.vercel.app/user/getToken/${Userstate.id}`,{}, { withCredentials: true });
 //     console.log("responce from token",res);
 //   }
 //   fetcher();

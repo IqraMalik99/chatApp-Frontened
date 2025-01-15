@@ -22,7 +22,7 @@
 //         try {
 //             // Send data to the backend using axios
 //             console.log("Mydata is",data)
-//             const response = await axios.post('http://localhost:3000/user/sign-up', data, { withCredentials: true });
+//             const response = await axios.post('https://chat-app-backened-beta.vercel.app/user/sign-up', data, { withCredentials: true });
 //             console.log('Response from server:', response.data);
 //             reset();
 //             dispatch(userState(data))
@@ -137,7 +137,7 @@ function SignUp() {
     const onSubmit = async (data) => {
         try {
             console.log("My data is", data);
-            const response = await axios.post('http://localhost:3000/user/sign-up', data,  {
+            const response = await axios.post('https://chat-app-backened-beta.vercel.app/user/sign-up', data,  {
                 headers: {
                   'Content-Type': 'multipart/form-data',
                 },

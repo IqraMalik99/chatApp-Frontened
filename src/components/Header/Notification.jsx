@@ -127,7 +127,7 @@ export default function Notification() {
     socket.on(FRIEND_REQUEST_ALERT, async({ sender }) => {
     //  let fetcher = async ()=>{
       console.log("Received friend request from hehe:", sender);
-      let res = await axios.get(`http://localhost:3000/user/updateReq/${sender.id}`, { withCredentials: true }); // see if id or _id
+      let res = await axios.get(`https://chat-app-backened-beta.vercel.app/user/updateReq/${sender.id}`, { withCredentials: true }); // see if id or _id
       console.log(`respone is : ${res}`);
       setRequests((prev) => [...prev, sender]); // Add new sender to the list
     //  };
@@ -144,7 +144,7 @@ export default function Notification() {
 
   useEffect(()=>{
     let fetcher = async()=>{
-      let res = await axios.get(`http://localhost:3000/user/getReq`, { withCredentials: true });
+      let res = await axios.get(`https://chat-app-backened-beta.vercel.app/user/getReq`, { withCredentials: true });
       console.log("reqgetter is :",res.data.data);
       if(res.data.data>0) {
         res.data.data.map((per)=> setRequests((prev)=> [...prev,per]));
@@ -164,7 +164,7 @@ export default function Notification() {
   // Handle accepting a friend request
   const handleAccept = async(requestId) => {
     socket.emit('ACCEPT_FRIEND_REQUEST', { requestId });
-    let res = await axios.get(`http://localhost:3000/chat/newSingleChat/${requestId}`, { withCredentials: true }); // see if id or _id
+    let res = await axios.get(`https://chat-app-backened-beta.vercel.app/chat/newSingleChat/${requestId}`, { withCredentials: true }); // see if id or _id
     console.log(`respone is : ${res}`);
     setRequests((prev) => prev.filter((req) => req.id !== requestId));
   };
