@@ -23,6 +23,7 @@ let dispatch = useDispatch();
   dispatch(userLogout());
     } catch (error) {
         console.error('Error submitting form:', error);
+        console.log("error")
       } finally {
         navigate("/")
       }
