@@ -27,7 +27,8 @@ let dispatch = useDispatch();
         dispatch(userLogout());
         console.log("error")
       } finally {
-        navigate("/")
+        navigate("/");
+        dispatch(userLogout());
       }
     }
     signout();
