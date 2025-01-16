@@ -15,7 +15,8 @@ let dispatch = useDispatch();
           const response = await axios.post('https://chat-app-backened-beta.vercel.app/user/sign-out', {}, {
             withCredentials: true, // Include credentials (cookies) with the request
             headers: {
-              'Content-Type': 'application/json'
+              'Content-Type': 'application/json',
+              'Authorization': 'Bearer YOUR_TOKEN',
             }
           });
           console.log('Signed out successfully:', response.data);
