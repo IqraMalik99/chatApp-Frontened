@@ -160,10 +160,7 @@ function UserModel() {
       let fetcher = async () => {
         try {
           const response = await axios.get('https://chat-app-backened-beta.vercel.app/chat/get-chat',
-          { withCredentials: true ,
-            headers: {
-              'Content-Type': 'application/json'   // Example for specifying content type
-            }
+          { withCredentials: true 
           });
           setFriends(response.data);
           console.log(response.data, " my chats");
@@ -185,10 +182,7 @@ function UserModel() {
       try {
         const response = await axios.get('https://chat-app-backened-beta.vercel.app/chat/get-chat', {
          withCredentials: true ,
-            headers: {
-              'Content-Type': 'application/json'   // Example for specifying content type
-            }
-        });
+           });
         setFriends(response.data);
         console.log(response.data, " my chats");
       } catch (error) {
