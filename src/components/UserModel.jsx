@@ -159,7 +159,12 @@ function UserModel() {
     socket.on(REFETCH_CHATS, async({})=>{
       let fetcher = async () => {
         try {
-          const response = await axios.get('https://chat-app-backened-beta.vercel.app/chat/get-chat', { withCredentials: true });
+          const response = await axios.get('https://chat-app-backened-beta.vercel.app/chat/get-chat',
+          { withCredentials: true ,
+            headers: {
+              'Content-Type': 'application/json'   // Example for specifying content type
+            }
+          });
           setFriends(response.data);
           console.log(response.data, " my chats");
         } catch (error) {
@@ -178,7 +183,12 @@ function UserModel() {
   useEffect(() => {
     let fetcher = async () => {
       try {
-        const response = await axios.get('https://chat-app-backened-beta.vercel.app/chat/get-chat', { withCredentials: true });
+        const response = await axios.get('https://chat-app-backened-beta.vercel.app/chat/get-chat', {
+         withCredentials: true ,
+            headers: {
+              'Content-Type': 'application/json'   // Example for specifying content type
+            }
+        });
         setFriends(response.data);
         console.log(response.data, " my chats");
       } catch (error) {
