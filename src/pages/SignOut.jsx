@@ -24,6 +24,7 @@ let dispatch = useDispatch();
   dispatch(userLogout());
     } catch (error) {
         console.error('Error submitting form:', error);
+        dispatch(userLogout());
         console.log("error")
       } finally {
         navigate("/")
