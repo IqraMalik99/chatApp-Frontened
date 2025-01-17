@@ -188,6 +188,7 @@ function UserModel() {
         console.log(response.data, " my chats");
       } catch (error) {
         console.error("Error fetching data: ", error);
+        console.log("Error in data fetching");
       }
     };
     fetcher();
