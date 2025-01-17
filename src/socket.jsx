@@ -10,12 +10,22 @@ export const SocketProvider = ({ children }) => {
 
     useEffect(() => {
         const newSocket = io('https://chat-app-backened-beta.vercel.app', {
-            withCredentials: true,
+            withCredentials: true, // Ensures credentials (cookies, headers) are sent
+            transports: ['websocket'], // Preferred transport method
+            extraHeaders: {
+                'Access-Control-Allow-Origin': 'https://chat-app-frontened-self.vercel.app', // CORS header
+            },
         });
+
+        // Store the socket connection in state
         setSocket(newSocket);
 
         // Cleanup on unmount
-        return () => newSocket.close();
+        return () => {
+            if (newSocket) {
+                newSocket.close();
+            }
+        };
     }, []);
 
     return (
